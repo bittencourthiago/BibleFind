@@ -14,9 +14,8 @@ bot.once('ready', () => {
 
 //mensagem de boas vindas
 bot.on('guildMemberAdd', membro => {
-    membro.send(`Seja bem-vindo hehe`);
+    membro.send(`Seja bem-vindo`);
 });
-
 
 //monitorando mensagens
 bot.on('message', msg => {
@@ -36,6 +35,5 @@ bot.on('message', msg => {
         abrevs(msg)
 
     }
-
 
 });
