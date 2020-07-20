@@ -14,7 +14,7 @@ bot.once('ready', () => {
 
 //mensagem de boas vindas
 bot.on('guildMemberAdd', membro => {
-    membro.send(`Seja bem-vindo`);
+    membro.send(`Seja bem-vindo(a)`);
 });
 
 //monitorando mensagens
