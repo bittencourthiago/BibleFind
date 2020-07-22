@@ -1,41 +1,45 @@
-const Discord = require("discord.js");
+function bibleBot() {
 
-//criando bot
-const bot = new Discord.Client();
+    const about = { version: '1.0', type: 'Nova Versão Internacional' }
+    const Discord = require("discord.js");
 
-const findBible = require("./biblia/biblia-find");
-const abrevs = require('./biblia/abrevs')
+    //criando bot
+    const bot = new Discord.Client();
 
-bot.login('NzI1OTE3MTM0NjM4ODA5MDkw.XvVtgw.7GmuDrxb6iM7TX-wLQ5UH8G95xg');
+    const findBible = require("./biblia/biblia-find");
+    const abrevs = require('./biblia/abrevs')
 
-bot.once('ready', () => {
-    console.log(`Bot online: ${bot.user.tag}!`);
-});
+    bot.login('NzI1OTE3MTM0NjM4ODA5MDkw.XvVtgw.7GmuDrxb6iM7TX-wLQ5UH8G95xg');
 
-//mensagem de boas vindas
-bot.on('guildMemberAdd', membro => {
-    membro.send(`Seja bem-vindo hehe`);
-});
+    bot.once('ready', () => {
+        console.log(`Bot online: ${bot.user.tag}!`);
+    });
 
+    //mensagem de boas vindas
+    bot.on('guildMemberAdd', membro => {
+        membro.send(`Seja bem-vindo hehe`);
+    });
 
-//monitorando mensagens
-bot.on('message', msg => {
+    //monitorando mensagens
+    bot.on('message', msg => {
 
-    indexChar = (char) => msg.content.indexOf(char) >= 0;
+        indexChar = (char) => msg.content.indexOf(char) >= 0;
 
-    if (msg.content == '/oi') {
-        msg.reply('olá hehe');
-    }
-    if (indexChar('/nvi')) {
+        if (msg.content == 'bible -v') {
+            msg.reply(`Seja bem vindo a BibleVerses '${about.version}' versão da bíblia: ${about.type}`);
+        }
+        if (indexChar('/nvi')) {
 
-        findBible(msg);
+            findBible(msg);
 
-    }
-    if (indexChar('/abrev')) {
+        }
+        if (indexChar('/abrev')) {
 
-        abrevs(msg)
+            abrevs(msg)
 
-    }
+        }
+    });
 
+}
 
-});
+bibleBot()
