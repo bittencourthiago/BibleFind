@@ -10,7 +10,7 @@ function bibleBot() {
     const findBible = require("./biblia/biblia-find");
     const abrevs = require('./biblia/abrevs')
 
-    bot.login('NzI1OTE3MTM0NjM4ODA5MDkw.XvVtgw.7GmuDrxb6iM7TX-wLQ5UH8G95xg');
+    bot.login('*****************************************');
 
     bot.once('ready', () => {
         console.log(`Bot online: ${bot.user.tag}!`);
