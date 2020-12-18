@@ -1,2 +1,2 @@
 # BibleFind Discord bot
- Bot de consulta de capítulos bíblicos 
+ Bot de consulta de capítulos bíblicos no discord 
