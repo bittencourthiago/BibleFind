@@ -2,7 +2,7 @@ const findBible = require("../biblia/biblia-find")
 const abrevs = require('../biblia/abrevs')
 
 module.exports = {
-    waitFor(msg){
+    waitFor(msg, about){
         indexChar = (char) => msg.content.indexOf(char) >= 0;
 
         if (msg.content == 'bible -v') {
