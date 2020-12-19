@@ -4,7 +4,8 @@ const Discord = require("discord.js");
 //criando bot
 const bot = new Discord.Client();
 
-const watchMessages = require('./View/WatchMessage')
+const watchMessage = require('./View/watchMessage')
+const memberAdd = require('./View/memberAdd')
 
 
 bot.login('*****************************************')
@@ -13,10 +14,6 @@ bot.once('ready', () => {
     console.log(`Bot online: ${bot.user.tag}!`)
 });
 
-//mensagem de boas vindas
-bot.on('guildMemberAdd', membro => {
-    membro.send(`Seja bem-vindo hehe`)
-});
+bot.on('guildMemberAdd', membro => memberAdd.message(membro));
 
-//monitorando mensagens
-bot.on('message', msg =>  watchMessages.waitFor(msg));
+bot.on('message', msg =>  watchMessage.waitFor(msg));
