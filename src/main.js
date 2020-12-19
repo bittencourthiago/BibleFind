@@ -5,18 +5,17 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 const watchMessages = require('./View/WatchMessage')
-const findBible = require("./biblia/biblia-find");
-const abrevs = require('./biblia/abrevs')
 
-bot.login('*****************************************');
+
+bot.login('*****************************************')
 
 bot.once('ready', () => {
-    console.log(`Bot online: ${bot.user.tag}!`);
+    console.log(`Bot online: ${bot.user.tag}!`)
 });
 
 //mensagem de boas vindas
 bot.on('guildMemberAdd', membro => {
-    membro.send(`Seja bem-vindo hehe`);
+    membro.send(`Seja bem-vindo hehe`)
 });
 
 //monitorando mensagens
